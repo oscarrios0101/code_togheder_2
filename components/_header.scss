@@ -1,0 +1,33 @@
+header {
+  @include flexbox-row;
+  justify-content: space-around;
+
+  img {
+    max-width: 20%;
+    max-height: 15vh;
+  }
+
+  .feather {
+    width: 65px;
+    height: 65px;
+  }
+  #shopping-cart {
+    cursor: pointer;
+  }
+
+  .header__div {
+    position: relative;
+    width: auto;
+    .cart-badge {
+      display: none;
+      position: absolute;
+      top: -15px;
+      right: -15px;
+      background-color: #ff0000;
+      color: #fff;
+      font-size: 1.5rem;
+      padding: 10px 15px;
+      border-radius: 50%;
+    }
+  }
+}

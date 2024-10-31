@@ -1,0 +1,30 @@
+// variables
+$primary-color: #333;
+$secondary-color: #fff;
+$tertiary-color: whitesmoke;
+$primary-body-color: #999;
+$button-hover: #660000; // dark red
+
+body {
+  font-family: "Raleway", sans-serif;
+  color: $primary-body-color;
+}
+
+//BOTONES
+button {
+  justify-content: center;
+  background-color: $secondary-color;
+  color: $primary-color;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.5s ease;
+  font-size: 1.2rem;
+}
+
+button:hover {
+  background-color: $button-hover;
+  color: $secondary-color;
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- css styles -->
+    <link rel="stylesheet" href="main.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Tienda en linea</title>
+  </head>
+  <body>
+    <header>
+      <i class="header__i" data-feather="menu"></i>
+      <img
+        src="img/Gemini_Generated_Image_4n0iw34n0iw34n0i.jpg"
+        alt="logo generico"
+      />
+      <div class="header__div">
+        <i
+          id="shopping-cart"
+          class="header__i"
+          data-feather="shopping-cart"
+        ></i>
+        <span id="cart-badge" class="cart-badge"></span>
+      </div>
+    </header>
+    <main>
+      <section class="banner">
+        <h2 class="banner__h2">Productos Nuevos</h2>
+        <p class="banner__p">Conoce nuestros productos nuevos</p>
+      </section>
+      <section class="products" id="products">
+        <template class="grid__product">
+          <article class="product">
+            <div class="img_wrapper">
+              <img class="product__img" src="" alt="" />
+            </div>
+            <div class="product__info">
+              <h3 class="product__name"></h3>
+              <p class="product__price"></p>
+            </div>
+            <button class="product__button">Comprar</button>
+          </article>
+        </template>
+      </section>
+      <section class="cart">
+        <div class="title-wrapper">
+          <h2 class="cart__title">Carrito de compras</h2>
+          <i class="header__i close-button" data-feather="x-circle"></i>
+        </div>
+        <section class="cart__elements"></section>
+        <template class="cart-template">
+          <div class="cart__item">
+            <div class="cart__img-wrapper">
+              <img class="cart__img" src="" alt="" />
+            </div>
+
+            <div class="cart__info-wrapper">
+              <h3>Name:</h3>
+              <p class="cart__name"></p>
+            </div>
+
+            <div class="cart__info-wrapper">
+              <h3>Price:</h3>
+              <p class="cart__price"></p>
+            </div>
+
+            <div class="cart__info-wrapper">
+              <h3>Quantity:</h3>
+              <p class="cart__quantity"></p>
+            </div>
+
+            <div class="cart__info-wrapper">
+              <h3>Subtotal:</h3>
+              <p class="cart__subtotal"></p>
+            </div>
+            <div class="cart__info-wrapper icons">
+              <div class="icons-wrapper">
+                <i class="header__i add-product" data-feather="plus"></i>
+                <i class="header__i remove-product" data-feather="minus"></i>
+                <i class="header__i delete-product" data-feather="trash"></i>
+              </div>
+            </div>
+          </div>
+        </template>
+        <div class="total-wrapper">
+          <h3>Total:</h3>
+          <p class="cart__total"></p>
+        </div>
+      </section>
+    </main>
+    <script src="main.js"></script>
+    <script>
+      feather.replace();
+    </script>
+  </body>
+</html>

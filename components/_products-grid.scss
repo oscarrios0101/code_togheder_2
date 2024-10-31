@@ -1,0 +1,63 @@
+.products {
+  display: grid;
+  width: 85%;
+  margin: auto;
+
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+  @include laptops {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  @include tablets {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  @include phones {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+  gap: 50px;
+
+  place-items: center;
+  padding: 20px;
+
+  article {
+    width: 100%;
+    padding: 10px;
+    @include flexbox-column;
+    border: 2px solid $secondary-color;
+    justify-content: space-between;
+    text-align: center;
+    .product__button {
+      // color: red;
+      margin-bottom: 25px;
+    }
+  }
+
+  .product__button {
+    justify-content: center;
+    background-color: $secondary-color;
+    color: $primary-color;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.5s ease;
+    font-size: 1.2rem;
+
+    &:hover {
+      background-color: $button-hover;
+      color: $secondary-color;
+    }
+  }
+
+  .img_wrapper {
+    width: 100%;
+    height: 400px;
+
+    img {
+      width: 85%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
