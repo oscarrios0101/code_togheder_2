@@ -32,13 +32,6 @@ img {
   margin: 2px;
 }
 
-.cart__info-wrapper.icons {
-  // border: 2px solid purple;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .title-wrapper {
   display: flex;
   justify-content: center;
@@ -47,5 +40,19 @@ img {
 
   .header__i {
     margin-left: 15px;
+  }
+}
+
+.icons-wrapper {
+  // border: 2px solid red;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .feather {
+    margin: 2px;
+    cursor: pointer;
+    // border: 2px solid red;
   }
 }

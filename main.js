@@ -37,6 +37,8 @@ function generateShortId() {
 const productsSection = document.querySelector(".products");
 const productTemplate = document.querySelector(".grid__product");
 
+//function to add event listeners to the cart elements
+
 function updateBadge() {
   const cartBadge = document.querySelector(".cart-badge");
   const totalQuantity = cartItems.reduce((acc, item) => acc + item.quantity, 0);
@@ -74,13 +76,18 @@ function renderCartItems() {
       item.price * item.quantity
     }`;
 
+    cartItem.querySelector(".cart__item").dataset.productId = item.id;
+
+    // Add the data-product-id attribute to the cart item
+    // cartItem.dataset.productId = item.id;
+
     // Append the cloned template to the cart elements
     cartElements.appendChild(cartItem);
     feather.replace();
   });
 }
 
-function createProductCart(product) {
+function createProductCard(product) {
   const productCard = productTemplate.content.cloneNode(true);
   productCard.querySelector(".product__img").src = product.image;
   productCard.querySelector(".product__name").textContent = product.name;
@@ -94,7 +101,7 @@ function createProductCart(product) {
 // Function to create a product article and append it to the products section
 
 products.forEach((product) => {
-  createProductCart(product);
+  createProductCard(product);
   // console.log(product);
 });
 
@@ -153,33 +160,17 @@ function calculateTotalPrice() {
 }
 
 //function to add the event listeners to the cart elements
-function addEventListenersToCartElements() {
-  const cartElements = document.querySelector(".cart__elements");
+document.querySelector(".cart__elements").addEventListener("click", (event) => {
+  if (event.target.classList.contains("add-product")) {
+    const cartItem = event.target.closest(".cart__item");
+    const productId = cartItem.dataset.productId;
+    console.log(`Product ID: ${productId}`);
 
-  cartElements.addEventListener("click", (event) => {
-    const target = event.target;
-
-    if (target.classList.contains("add-product")) {
-      const productId = target.closest(".cart__item").dataset.productId;
-      const product = cartItems.find((p) => p.id === productId);
-      product.quantity++;
-      renderCartItems();
-      calculateTotalPrice();
-    } else if (target.classList.contains("remove-product")) {
-      const productId = target.closest(".cart__item").dataset.productId;
-      const product = cartItems.find((p) => p.id === productId);
-      if (product.quantity > 1) {
-        product.quantity--;
-      } else {
-        cartItems = cartItems.filter((p) => p.id !== productId);
-      }
-      renderCartItems();
-      calculateTotalPrice();
-    } else if (target.classList.contains("delete-product")) {
-      const productId = target.closest(".cart__item").dataset.productId;
-      cartItems = cartItems.filter((p) => p.id !== productId);
-      renderCartItems();
-      calculateTotalPrice();
-    }
-  });
-}
+    console.log("Add product clicked");
+  } else if (event.target.classList.contains("remove-product")) {
+    console.log("Remove product clicked");
+  } else if (event.target.classList.contains("delete-product")) {
+    // Handle delete product logic
+    console.log("Delete product clicked");
+  }
+});

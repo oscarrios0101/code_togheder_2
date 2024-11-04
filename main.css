@@ -70,12 +70,6 @@ img {
   margin: 2px;
 }
 
-.cart__info-wrapper.icons {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .title-wrapper {
   display: flex;
   justify-content: center;
@@ -84,6 +78,17 @@ img {
 }
 .title-wrapper .header__i {
   margin-left: 15px;
+}
+
+.icons-wrapper {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icons-wrapper .feather {
+  margin: 2px;
+  cursor: pointer;
 }
 
 .products {
