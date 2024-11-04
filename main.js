@@ -166,11 +166,32 @@ document.querySelector(".cart__elements").addEventListener("click", (event) => {
     const productId = cartItem.dataset.productId;
     console.log(`Product ID: ${productId}`);
 
+    const product = products.find((p) => p.id === productId);
+    product.quantity++;
+
+    renderCartItems();
+    calculateTotalPrice();
+
     console.log("Add product clicked");
   } else if (event.target.classList.contains("remove-product")) {
-    console.log("Remove product clicked");
+    const cartItem = event.target.closest(".cart__item");
+    const productId = cartItem.dataset.productId;
+
+    const product = products.find((p) => p.id === productId);
+    product.quantity--;
+    if (product.quantity === 0) {
+      cartItems = cartItems.filter((p) => p.id !== productId);
+    }
+    renderCartItems();
+    calculateTotalPrice();
   } else if (event.target.classList.contains("delete-product")) {
     // Handle delete product logic
-    console.log("Delete product clicked");
+    const cartItem = event.target.closest(".cart__item");
+    const productId = cartItem.dataset.productId;
+
+    // Remove the cart item from the cartItems array
+    cartItems = cartItems.filter((p) => p.id !== productId);
+    renderCartItems();
+    calculateTotalPrice();
   }
 });
