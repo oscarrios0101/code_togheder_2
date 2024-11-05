@@ -8,7 +8,22 @@
   width: 950px;
   height: auto;
   transition: all 0.3s ease-in-out;
+  text-align: center;
   transform: translateX(100%); /* Initially off-screen */
+  @include tablets {
+    width: 600px;
+    .cart__img-wrapper {
+      // border: 2px solid red;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 250px;
+    }
+  }
+  @include phones {
+    width: 100%;
+  }
 }
 
 .cart.show {
@@ -54,5 +69,18 @@ img {
     margin: 2px;
     cursor: pointer;
     // border: 2px solid red;
+  }
+}
+
+.cart__info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  // border: 2px solid red;
+  width: 80%;
+  margin-right: 15px;
+  margin-left: 15px;
+  @include tablets {
+    flex-direction: column;
   }
 }
