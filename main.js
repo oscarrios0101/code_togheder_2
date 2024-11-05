@@ -34,6 +34,10 @@ function generateShortId() {
   return fullId.slice(0, 20);
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+  showCartButton();
+});
+
 const productsSection = document.querySelector(".products");
 const productTemplate = document.querySelector(".grid__product");
 
@@ -207,3 +211,19 @@ function showCartButton() {
     cartButton.style.display = "none";
   }
 }
+
+document.querySelector("header").addEventListener("click", (event) => {
+  if (event.target.classList.contains("menu")) {
+    const menu = document.querySelector(".navbar");
+    menu.classList.toggle("show");
+  }
+});
+
+//function that closes the menu
+
+document.querySelector(".navbar").addEventListener("click", (event) => {
+  if (event.target.classList.contains("close-button")) {
+    const menu = document.querySelector(".navbar");
+    menu.classList.toggle("show");
+  }
+});

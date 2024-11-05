@@ -236,4 +236,32 @@ header .header__div .cart-badge {
   font-size: 1.5rem;
   padding: 10px 15px;
   border-radius: 50%;
+}
+
+.header__i {
+  cursor: pointer;
+}
+
+.navbar {
+  width: 20%;
+  background-color: #fff;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translateX(-100%);
+  transition: all 0.3s ease-in-out;
+}
+.navbar li {
+  list-style: none;
+  padding: 10px;
+  cursor: pointer;
+}
+.navbar a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.navbar.show {
+  transform: translateX(0);
 }/*# sourceMappingURL=main.css.map */
