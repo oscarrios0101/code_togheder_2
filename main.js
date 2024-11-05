@@ -53,6 +53,7 @@ function updateBadge() {
 //function to render products in cart
 
 function renderCartItems() {
+  showCartButton();
   updateBadge();
   const cartElements = document.querySelector(".cart__elements");
   const cartTemplate = document.querySelector(".cart-template");
@@ -195,3 +196,14 @@ document.querySelector(".cart__elements").addEventListener("click", (event) => {
     calculateTotalPrice();
   }
 });
+
+//function to show cart button only if there are items in the cart
+
+function showCartButton() {
+  const cartButton = document.querySelector(".procced-to-checkout");
+  if (cartItems.length > 0) {
+    cartButton.style.display = "block";
+  } else {
+    cartButton.style.display = "none";
+  }
+}

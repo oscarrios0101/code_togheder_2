@@ -79,6 +79,11 @@ body {
   display: flex;
   justify-content: space-between;
 }
+@media screen and (max-width: 60rem) {
+  .cart__item {
+    border-top: #999 1px solid;
+  }
+}
 
 img {
   width: 100%;
@@ -121,6 +126,13 @@ img {
   .cart__info {
     flex-direction: column;
   }
+}
+
+.procced-to-checkout button {
+  background-color: #999;
+}
+.procced-to-checkout button:hover {
+  background-color: #660000;
 }
 
 .products {
